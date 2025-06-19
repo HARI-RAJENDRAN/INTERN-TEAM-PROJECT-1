@@ -1,0 +1,7 @@
+Dear {{Name}},
+
+You are selected for the {{Domain}} internship.
+Your age is {{Age}}.
+
+Regards,
+HR Team
