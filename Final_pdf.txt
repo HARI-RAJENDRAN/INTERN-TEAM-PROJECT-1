@@ -1,0 +1,47 @@
+
+
+
+ Dear {{Name}};                                                                                                {{Date}}
+ Age:{{Age}},
+
+{{CollegeName}}
+
+ We are pleased to offer you an opportunity to undergo On-The-Job Training (OJT) at VDart Academy. This training program 
+ is designed to provide you with practical exposure and hands-on experience, enhancing your skills and preparing you 
+ for future career opportunities.
+
+ 
+ Please find below the details of the same
+
+
+ Enrollment:      Academic Internship             Enrollment ID:   A0254
+ 
+ Technology:      {{Technology}}                  Domain:           {{Domain}}
+ 
+ Organization:    VDart Academy                   Location:         GCE – Mannapuram
+ 
+ Start Date:      {{StartDate}}                   End Date:         {{EndDate}}
+ 
+ Stipend:         Not Applicable                  Reporting SME:    Anubharathi P
+ 
+ Shift Time:      -                               Shift Days:       Monday - Friday
+ 
+ SME Email:       {{Email}}                       SME Mobile:       {{PhoneNumber}}
+
+
+
+ We believe this opportunity will contribute to your professional development, and we look forward to your active 
+ participation. Kindly confirm your acceptance by signing a copy of this letter by 12-Jun-2025.
+
+ Should you have any questions, feel free to contact us.
+
+ Best regards,
+
+
+ Authorized Signatory
+ VDart Academy
+                                                                                                           📞 +91 99445 48333
+                                                                                                           📧 info@vdartacademy.com
+                                                                                                           📍  Mannarpuram, Trichy-620020
+ 
+ 

@@ -1,7 +1,32 @@
-Dear {{Name}},
+Dear {{Name}}
 
-You are selected for the {{Domain}} internship.
-Your age is {{Age}}.
+Age: {{Age}}
 
-Regards,
-HR Team
+We are pleased to offer you an opportunity to undergo On-The-Job Training (OJT) at VDart Academy. This training program
+is designed to provide you with practical exposure and hands-on experience, enhancing your skills
+and preparing you for future career opportunities.
+
+Please find below the details of the same:
+
+Enrollment: Academic Internship Enrollment ID: A0254
+Technology: {{Technology}}          Domain: {{Domain}}
+Organization: VDart Academy         Location: GCE - Mannapuram
+
+Start Date: {{StartDate}}           End Date: {{EndDate}}
+Stipend: {{Stipend}}                Reporting SME: Anubharathi P
+Shift Time: -                      Shift Days: Monday - Friday
+
+SME Email: hari12345@gamil.com     SME Mobile: {{PhoneNumber}}
+
+We believe this opportunity will contribute to your professional development, and we look forward to
+your active participation. Kindly confirm your acceptance by signing a copy of this letter by 12-Jun-2025.
+
+Should you have any questions, feel free to contact us.
+
+Best regards,
+
+Authorized Signatory  
+VDart Academy  
+Phone: +91 99445 48333  
+Email: info@vdartacademy.com  
+Location: Mannarpuram, Trichy-62002

@@ -1,39 +1,21 @@
 import os
 import pandas as pd
 from fpdf import FPDF
-import textwrap
-
-# Downloaded font path (DejaVuSans.ttf should be in the same folder)
-FONT_PATH = r"C:\Users\Academytraining\Documents\VISUAL STUDIO\DejaVuSans.ttf"
-
-
 
 # Your published CSV link from Google Sheets
 sheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTxaUq2leO_eZIQWMWzeSEtBbj0tknrnkhLInZjND3MfkRgZ77qBgWPVnDm6w-rEUFbt5pp5dBTyMLD/pub?output=csv"
-
-# Ensure output folder exists
-output_folder = r"C:\Users\Academytraining\Documents\generated_pds"
-os.makedirs(output_folder, exist_ok=True)
 
 # Read the sheet
 df = pd.read_csv(sheet_url)
 df.columns = df.columns.str.strip()  # Strip whitespace from column names
 
-# PDF layout settings
-LINE_HEIGHT = 6
-MARGIN_LEFT = 20
-MARGIN_RIGHT = 20
+# Ensure output folder exists
+output_folder = r"C:\Users\Academytraining\Documents\generated_pds"
+os.makedirs(output_folder, exist_ok=True)
 
-# Helper function to add two-column rows
-def two_col(pdf, label1, value1, label2, value2, w=75, lh=6):
-    pdf.cell(0, lh, "")  # reset line
-    x = pdf.get_x()
-    y = pdf.get_y()
-
-    pdf.multi_cell(w, lh, f"{label1}: {value1}", border=0)
-    pdf.set_xy(x + w + 5, y)
-    pdf.multi_cell(w, lh, f"{label2}: {value2}", border=0)
-    pdf.ln(lh)
+# Add a Unicode font once (make sure 'DejaVuSans.ttf' is in your script folder)
+base_pdf = FPDF()
+base_pdf.add_font('DejaVu', '', 'DejaVuSans.ttf')
 
 # Loop through each row to generate PDFs
 for index, row in df.iterrows():
@@ -59,29 +41,19 @@ for index, row in df.iterrows():
             for key, value in user_data.items():
                 content = content.replace(f"{{{{{key}}}}}", str(value))
     except FileNotFoundError:
-        print("❌ Error: pdf_modi.txt template not found!")
+        print("Error: pdf_modi.txt template not found!")
         continue
 
-    # Create a new PDF
+    # Create a new PDF for each user
     pdf = FPDF()
+    pdf.add_font('DejaVu', '', 'DejaVuSans.ttf')
     pdf.add_page()
-    pdf.set_left_margin(MARGIN_LEFT)
-    pdf.set_right_margin(MARGIN_RIGHT)
-
-    # Add Unicode font
-    pdf.add_font("DejaVu", "", FONT_PATH, uni=True)
     pdf.set_font("DejaVu", size=12)
 
-    # Write the content
-    for paragraph in content.split("\n"):
-        if paragraph.strip():
-            # Wrap long lines
-            for line in textwrap.wrap(paragraph, width=100):
-                pdf.multi_cell(0, LINE_HEIGHT, line)
-        pdf.ln(LINE_HEIGHT)
+    pdf.multi_cell(0, 10, txt=content)
 
-    # Save the PDF
     filename = f"OfferLetter_{user_data['Name'].strip().replace(' ', '_').replace('/', '_')}.pdf"
     filepath = os.path.join(output_folder, filename)
+
     pdf.output(filepath)
     print(f"✅ PDF generated for: {user_data['Name']} at {filepath}")
